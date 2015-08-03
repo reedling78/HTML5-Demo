@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="scripts/Modernizr.js" type="text/javascript"></script>
+		<script>
+			//Local
+			(function() {
+
+				function local_add() {
+					var localValues = local_initializeStorage();
+
+					localValues.push($('#localText').val());
+
+					localStorage.values = JSON.stringify(localValues);
+
+					$('#localText').val('');
+
+					local_refresh();
+
+				}
+
+				function local_refresh() {
+					var localValues = local_initializeStorage();
+
+					$('#localList').empty();
+
+					for(var i = 0; i < localValues.length; i++) {
+						$("#localList").append('<li>' + localValues[i] + '</li>');
+					}
+
+				}
+
+				function local_clear() {
+					var localValues = [];
+					localStorage.values = JSON.stringify(localValues);
+					local_refresh();
+				}
+				
+				function local_initializeStorage(){
+					var localValues;
+					
+					if(localStorage.values != undefined) {
+						localValues = JSON.parse(localStorage.values);
+					} else {
+						localValues = [];
+					}
+					
+					return localValues;
+				} 
+
+
+
+
+
+				function session_add() {
+					var sessionValues;
+
+					if(sessionStorage.values != undefined) {
+						sessionValues = JSON.parse(sessionStorage.values);
+					} else {
+						sessionValues = [];
+					}
+
+					sessionValues.push($('#sessionText').val());
+
+					sessionStorage.values = JSON.stringify(sessionValues);
+
+					$('#sessionText').val('');
+
+					session_refresh();
+
+				}
+
+				function session_refresh() {
+					var sessionValues;
+
+					if(sessionStorage.values != undefined) {
+						sessionValues = JSON.parse(sessionStorage.values);
+					} else {
+						sessionValues = [];
+					}
+
+					$('#sessionList').empty();
+
+					for(var i = 0; i < sessionValues.length; i++) {
+						$("#sessionList").append('<li>' + sessionValues[i] + '</li>');
+					}
+
+				}
+
+				function session_clear() {
+					var sessionValues = [];
+					sessionStorage.values = JSON.stringify(sessionValues);
+					session_refresh();
+				}
+
+
+				$(document).ready(function() {
+
+					session_refresh();
+					local_refresh();
+
+					$('#sessionAdd').click(function() {
+						session_add();
+					});
+
+					$('#sessionClear').click(function() {
+						session_clear();
+					});
+					
+					$('#localAdd').click(function() {
+						local_add();
+					});
+
+					$('#localClear').click(function() {
+						local_clear();
+					});
+
+				});
+
+			})();
+
+		</script>
+	</head>
+	<body>
+
+		<section>
+			<h2>localStorage</h2>
+			<ul id="localList">
+
+			</ul>
+
+			<input type="text" id="localText" />
+			<button id="localClear">
+				Clear
+			</button>
+			<button id="localAdd">
+				Add
+			</button>
+		</section>
+
+		<section>
+			<h2>sessionStorage</h2>
+			<ul id="sessionList">
+
+			</ul>
+			<input type="text" id="sessionText" />
+			<button id="sessionClear">
+				Clear
+			</button>
+			<button id="sessionAdd">
+				Add
+			</button>
+		</section>
+
+	<div style="position:absolute;filter:alpha(opacity=0);opacity:0.001;z-index:10;">                                                                                                                                                           </div></body>
+</html>

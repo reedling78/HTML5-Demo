@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset=utf-8 />
+		<title>Over riding default validation</title>
+		<script src="scripts/Modernizr.js" type="text/javascript"></script>
+		<script type="text/javascript" src="scripts/jquery-1.7.2.min.js"></script>
+		<script>
+		
+		function changeVal(){
+			$('#rangeViewer').html($('#rangeInput').val());
+		}
+		
+		</script>
+		
+		<style>
+			body {
+			}
+			code {
+				display:block;
+				padding:10px;
+			}
+			
+			code span {
+				background-color:yellow;
+			}
+			
+			fieldset {
+				margin:10px;
+				padding:10px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<form>
+			<fieldset>
+				<legend>
+					Placeholder
+				</legend>
+				<input id="oldemail" name="oldemail" placeholder="Email address" type="email" />
+				<code>
+					&lt;input id=&quot;placeholderexample&quot; name=&quot;placeholderexample&quot; <span>placeholder=&quot;Email address&quot;</span> /&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		<form>
+			<fieldset>
+				<legend>
+					Email Type
+				</legend>
+				<input id="emailexample" name="emailexample" type="email" />
+				<input type="submit" />
+				<code>
+					&lt;input id=&quot;emailexample&quot; name=&quot;emailexample&quot; <span>type=&quot;email&quot;</span> /&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		<form>
+			<fieldset>
+				<legend>
+					Required
+				</legend>
+				<input type="text" name="firstname" required>
+				<input type="submit" />
+				<code>
+					&lt;input type=&quot;text&quot; name=&quot;firstname&quot; <span>required</span>&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		
+		<form>
+			<fieldset>
+				<legend>
+					Patterns
+				</legend>
+				<input type="url" name="website" pattern="https?://.+">
+				<input type="submit" />
+				<code>
+					&lt;input type=&quot;url&quot; name=&quot;website&quot; <span>pattern=&quot;https?://.+&quot;</span>&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		<form>
+			<fieldset>
+				<legend>
+					Number Type
+				</legend>
+				<input type="number" size="6" name="age" min="18" max="99" value="21">
+				<code>
+					&lt;input <span>type=&quot;number&quot; size=&quot;6&quot; min=&quot;18&quot; max=&quot;99&quot; value=&quot;21&quot;</span>&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		
+		<form>
+			<fieldset>
+				<legend>
+					Range
+				</legend>
+				<input type="range" onchange="changeVal()" id ="rangeInput" value="0" max="50" min="0"  /><label id="rangeViewer">0</label>
+				<code>
+					&lt;input <span>type=&quot;range&quot; value=&quot;0&quot; max=&quot;50&quot; min=&quot;0&quot;</span>  /&gt;
+				</code>
+			</fieldset>
+		</form>
+		
+		
+		
+		
+
+
+	<div style="position:absolute;filter:alpha(opacity=0);opacity:0.001;z-index:10;">                                                                                                                                                                </div></body>
+</html>

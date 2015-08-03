@@ -1,0 +1,112 @@
+body {
+	width: 798px;
+	margin: 0px auto;
+	background-color: #FFFFFF;
+	color: #fff;
+}
+
+header {
+	background-color: #003366;
+	padding-left: 10px;
+	margin: 10px 0px;
+}
+
+h1, h2 {
+	margin: 0px;
+	color: #fff;
+}
+
+body > nav {
+	background-color: #CCCCCC;
+	clear: both;
+	margin: 10px 0px;
+}
+
+body > nav ul {
+
+	padding: 0px;
+	margin: 0px;
+}
+
+body > nav ul li {
+	display: inline;
+	float: left;
+}
+
+body > nav ul li a {
+	background-color: #CCCCCC;
+	display: block;
+	width: 244px;
+	border: solid 1px #003366;
+	text-align: center;
+	padding: 5px 10px;
+	color: #003366;
+}
+
+body > section {
+	background-color: #003366;
+	width: 590px;
+	float: left;
+	margin: 10px 0px;
+}
+
+body > aside {
+	background-color: #CCCC99;
+	width: 180px;
+	float: right;
+	margin: 10px 0px;
+	padding: 10px;
+	border: solid 1px #003366;
+}
+
+body > footer {
+	clear: both;
+	background-color: #003366;
+	border: solid 1px #fff;
+	margin: 10px 0px;
+	padding: 3px 10px;
+}
+
+section > article {
+	background-color: #fff;
+	margin: 10px 10px;
+	color: #000;
+}
+
+article > header {
+	padding: 0px;
+}
+article > section {
+	margin: 0px 10px;
+	padding-bottom: 10px;
+}
+
+aside h1 {
+	color: #003366;
+}
+
+aside nav ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+aside nav ul li {
+	background-color: #CCCCCC;
+	border: solid 1px #003366;
+}
+
+aside nav ul li {
+	background-color: #CCCCCC;
+	border: solid 1px #003366;
+}
+
+aside nav ul li a {
+	color: #003366;
+	padding: 5px 10px;
+	display: block;
+}
+
+figcaption {
+	color: #003366;
+}
+
